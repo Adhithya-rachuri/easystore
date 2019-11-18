@@ -1,0 +1,27 @@
+ /*body{
+	margin : 0px;
+	padding : 0px;
+	background-color : rgba(155,152,168,0.2);
+}*/
+.bgimg{
+	background-image: url("../../assets/Images/Registration_img.jpg");
+	color: whitesmoke;
+}
+
+.login_box{
+	margin-top: 50px;
+	border-width : 2px!important;
+}
+
+.logo_img{
+	width : 200px;
+	height : 200px;
+}
+
+.gender_lb, .categories_lb{
+	display : block;
+}
+
+.errorStyle2{
+    border : dashed 2px #924242;
+}
