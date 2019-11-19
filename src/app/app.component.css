@@ -2,9 +2,10 @@
 panel {
     background-image: url("../assets/Images/background_img.jpg");
   }
-.bg{
+.headerbar{
     /*background-color: hsla(14, 100%, 53%, 0.6);*/
-    background-color:#696969;
+    /*background-color:#696969;*/
+    background-color: #03f0fc;
     
 }
 .img{
@@ -37,4 +38,6 @@ panel {
     background: rgba(0, 0, 0, 0.7);
 }
  
- 
+ .point{
+     cursor: pointer;
+ }

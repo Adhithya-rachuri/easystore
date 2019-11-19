@@ -9,9 +9,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import{NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CarouselimagesComponent } from './carouselimages/carouselimages.component';
 
 const appRoutes: Routes = [
+  { path : '', component : CarouselimagesComponent },
   { path : 'login', component : LoginComponent },
   { path : 'registration', component : RegistrationComponent },
   { path : 'home', component : HomeComponent }
@@ -26,12 +28,14 @@ const appRoutes: Routes = [
     LoginComponent,
     NavbarComponent,
     RegistrationComponent,
-    SidebarComponent
+    SidebarComponent,
+    CarouselimagesComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
