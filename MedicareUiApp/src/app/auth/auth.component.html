@@ -1,0 +1,211 @@
+<div class="container-fluid" id="main-login">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="login" *ngIf="!register">
+        <hr>
+        <br>
+        <div class="login-header">
+          <h2><b>Medical Care</b></h2>
+          <br>
+        </div>
+        <div class="login-vertical">
+          <hr>
+        </div>
+        <p style="color: white" *ngIf="displayFlag">
+          {{errorDisplay}}
+          <span style="color: black" data-toggle="modal" data-target="#myModal" class="fa fa-question-circle fa-1x"></span>
+        </p>
+        <p style="color: green">{{successDisplay}}</p>
+
+        <div class="login-inputs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{ 'active':activeTab==='User'}"  (click)="roleChange($event)">User</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" [ngClass]="{ 'active':activeTab==='Admin'}" (click)="roleChange($event)">Admin</a>
+                </li>
+              </ul>
+          <form #form="ngForm" (ngSubmit)="onLogin()">
+            <p><b *ngIf= "roleFlag">Username:</b> </p>
+            <p><b *ngIf= "!roleFlag">SIN Id:</b> </p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <span class="fa fa-user-circle fa-2x" aria-hidden="true" ></span>
+                  </div>
+                  <div class="col-md-6">
+                    <input style="width:300px;" type="text" class="form-control" name="username" placeholder="username" [(ngModel)]="selections.userName"
+                      minlength="5" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p><b>Password:</b> </p>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-1">
+                    <span class="fa fa-lock fa-2x" aria-hidden="true" ></span>
+                  </div>
+                  <div class="col-md-6">
+                    <input style="width:300px;" type="password" class="form-control" name="password" placeholder="password" [(ngModel)]="selections.password"
+                      (keyup.enter)="onLogin()" minlength="5" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="login-buttons">
+          <h5 style="color: red" *ngIf='errorDisplayFlag'>{{errorDisplay}}</h5>
+          <span *ngIf="isSpin">
+            <img width="50px;" height="50px;" src="../../assets/loading.gif">
+          </span>
+        </div>
+        <br>
+        <div class="submit-btn">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn-primary" style=" border-radius: 65px;" (click)="onLogin()" [disabled]='!form.valid'>Login</button>&nbsp;
+                </div>
+                <div class="col-md-4">
+                  <button class="btn btn-warning" style=" border-radius: 65px;" (click)="onRegister()">User registration</button>&nbsp;
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="register-part" *ngIf="register">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="login">
+          <div class="login-vertical">
+            <p style="color: rgb(168, 40, 40)" *ngIf="!registerErrorFlag">
+                {{registerError}}
+              </p>
+          </div>
+          <div class="login-inputs">
+            <form #form="ngForm" (ngSubmit)="onRegisterSubmit()">
+              <h2><b>Registration Form</b></h2>
+              <hr>
+                <p><b>Patient SIN Id:</b> </p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <span class="fa fa-id-badge fa-2x" aria-hidden="true" ></span>
+                      </div>
+                      <div class="col-md-6">
+                        <input style="width:300px;" type="text" disabled class="form-control" placeholder="patientID" name="student_id" [(ngModel)]="registerSelection.patient_id"
+                          minlength="5" required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <p><b>First name:</b> </p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-1">
+                      <span class="fa fa-id-badge fa-2x" aria-hidden="true" ></span>
+                    </div>
+                    <div class="col-md-6">
+                      <input style="width:300px;" type="text" class="form-control" placeholder="First name" name="firstname" [(ngModel)]="registerSelection.firstName"
+                        minlength="5" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p><b>Last Name:</b> </p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-1">
+                      <span class="fa fa-id-badge fa-2x" aria-hidden="true" ></span>
+                    </div>
+                    <div class="col-md-6">
+                      <input style="width:300px;" type="text" class="form-control" placeholder="Last name" name="lastname" [(ngModel)]="registerSelection.lastName"
+                        minlength="5" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p><b>Email:</b> </p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-1">
+                      <span class="fa fa-user-circle fa-2x" aria-hidden="true"></span>
+                    </div>
+                    <div class="col-md-6">
+                      <input style="width:300px;" type="text" class="form-control" placeholder="Email " name="email" [(ngModel)]="registerSelection.email"
+                        minlength="5" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p><b>Password:</b> </p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-1">
+                      <span class="fa fa-lock fa-2x" aria-hidden="true" ></span>
+                    </div>
+                    <div class="col-md-6">
+                      <input style="width:300px;" type="password" class="form-control" name="password" placeholder="password" [(ngModel)]="registerSelection.password"
+                        minlength="5" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p><b>Re-enter Password:</b> </p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col-md-1">
+                      <span class="fa fa-lock fa-2x" aria-hidden="true" ></span>
+                    </div>
+                    <div class="col-md-6">
+                      <input style="width:300px;" type="password" class="form-control" name="password" placeholder="Re-enter password" [(ngModel)]="registerSelection.repassword"
+                         minlength="5" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <hr>
+          <div class="submit-btn">
+            <div class="row">
+              <div class="col-md-12">
+                  <h5 style="color: red" *ngIf='errorRegdisplayFlag'>{{errorRegdisplay}}</h5>
+                  <br>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button class="btn btn-primary" style=" border-radius: 65px;" [disabled]='!form.valid' (click)="onRegisterSubmit()">SignUp</button>&nbsp;
+                  </div>
+                  <div class="col-md-4">
+                    <button class="btn btn-warning" style=" border-radius: 65px;" (click)="onRegister()">Back to Login</button>&nbsp;
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div  id="animated bounce">
+    <img class="auth2Img" src="../../assets/heart.png" alt="image1">
+    <img class="auth1Img" src="../../assets/medicalLogo.png" alt="image1">
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<app-sidenavbar></app-sidenavbar>
+<div class="main-details">
+    <br>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <h4>
+                <b>My profile details:</b>
+            </h4>
+            <img src='http://localhost:3000/{{data.image}}' alt="image" width="100px" height="100px">
+        </div>
+        <br>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>
+                        <b> SIN no. : </b>
+                    </h6>
+                    <h6>
+                        <b> Patient Username : </b>
+                    </h6>
+                    <h6>
+                        <b> Patient Name : </b>
+                    </h6>
+                    <h6>
+                        <b> Gender : </b>
+                    </h6>
+                    <h6>
+                        <b> DOB : </b>
+                    </h6>
+                    <h6>
+                        <b> Address : </b>
+                    </h6>
+                    <h6>
+                        <b> Father Name : </b>
+                    </h6>
+                    <h6>
+                        <b> Mother Name : </b>
+                    </h6>
+                    <h6>
+                        <b> Doctor Name : </b>
+                    </h6>
+                    <h6>
+                        <b> Doctor No. : </b>
+                    </h6>
+                    <h6>
+                        <b> Email : </b>
+                    </h6>
+                    <!-- <h6><b>DOB :</b></h6> -->
+                </div>
+                <div class="col-md-4">
+                    <h6>{{data.SIN}}</h6>
+                    <h6>{{data.patient_username}}</h6>
+                    <h6>{{data.first_name}} {{data.last_name}}</h6>
+                    <h6>{{data.gender}}</h6>
+                    <h6>{{data.dob}}</h6>
+                    <h6>{{data.addresses}}</h6>
+                    <h6>{{data.patient_father}}</h6>
+                    <h6>{{data.patient_mother}}</h6>
+                    <h6>{{data.patient_doctorName}}</h6>
+                    <h6>{{data.patient_doctorNumber}}</h6>
+                    <h6>{{data.email}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

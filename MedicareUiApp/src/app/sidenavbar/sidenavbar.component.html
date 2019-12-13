@@ -1,0 +1,48 @@
+<div id="mySidebar" class="sidebar" #mySidebar>
+    <button class="mybtn fa fa-child" [routerLink]="['/myProfile']" routerLinkActive="active" >&nbsp;&nbsp;&nbsp; My Profile</button>
+    <button class="mybtn fa fa-group" [routerLink]="['/registration']" routerLinkActive="active" >&nbsp;&nbsp;&nbsp; Registration</button>
+    <button class="mybtn fa fa-map"  routerLinkActive="active">&nbsp;&nbsp;&nbsp;Add details</button>
+    <button class="mybtn fa fa-object-group"  routerLinkActive="active">&nbsp;&nbsp;&nbsp;Book appointment</button>
+  </div>
+  
+  <div id="main"  class="navbar navbar-default fixed-top">
+    <div style="width:100%">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-3 brand-border">
+              <h4><b>Medical care Management</b></h4>
+            </div>
+            <div class="col-md-9">
+              <ul class="nav nav-tabs ">
+                <li class="nav-item">
+                  <a class="nav-link">My Details</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link">Doctor appointment</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link">My Reports</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item ml-auto ">
+                  <a style="background-color: firebrick" class="nav-link" 
+                  (click)="onLogout()" routerLinkActive="active">Logout </a>
+                </li>
+  
+                <div class="headers">
+                    <span class="fa fa-user-circle fa-1x face-margin"></span>
+                    <span><h5> {{user.firstName}}&nbsp;{{user.lastName}}</h5></span>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

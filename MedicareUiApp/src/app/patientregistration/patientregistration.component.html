@@ -1,0 +1,225 @@
+<app-sidenavbar></app-sidenavbar>
+<br>
+<div class="main-registration">
+  <div class="container-fluid">
+      <button type="button" (click)="generateID()" class="btn btn-primary pull-left" style="background-color: #9c27b0"><span class="fa fa-arrow-left"></span> &nbsp;go Back</button>
+      <br>
+      <br>
+    <div class="row" id="regForm">
+      <div class="col-md-12">
+        <h3 style="text-decoration : underline; color:gray"> Registration Form. Please fill out the mandatory fields. </h3>
+        <br>
+      </div>
+    </div>
+    {{myForm.value | json}}
+    <form [formGroup]="myForm" (ngSubmit)="submittedForm()" id="regForm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Patient ID :</label>
+            </div>
+            <div class="col-md-6">
+              <input style="width: 390px;" type="text" class="form-control" placeholder="Patient Id" formControlName="SIN" disabled>
+            </div>
+            <div class="col-md-4">
+              <sub style="color: red">Should contain 0-9, minimum 6 digit.*Should be filled by Admin*.</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Patient Username :</label>
+            </div>
+            <div class="col-md-6">
+              <input style="width: 390px;" type="text" class="form-control" placeholder="Patient username" formControlName="patient_username"
+               required>
+            </div>
+            <div class="col-md-4">
+              <sub style="color: red">Should contain a-z & 0-9, minimum 6 digit.*Should be filled by Admin*.</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" >
+              <!-- formGroupName="name" -->
+            <div class="col-md-2">
+              <label>Patient Name :</label>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="First Name" formControlName="first_name" required>
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Last Name" formControlName="last_name">
+              <!-- <sub style="color: red">Should contain a-z & 0-9, minimum 6 digit.*Should be filled by Admin*.</sub> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Date of Birth :</label>
+            </div>
+            <div class="col-md-4">
+              <input type="date" class="form-control" placeholder="date" formControlName="dob" required>
+            </div>
+            <div class="col-md-4">
+              <sub style="color: red">Example: 02/30/1993 (month/date/year)</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Gender</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" value="male" formControlName="gender" > MALE
+            </div>
+            <div class="col-md-2">
+              <input type="radio" value="female" formControlName="gender"> FEMALE
+            </div>
+            <div class="col-md-2">
+              <input type="radio" value="other" formControlName="gender"> OTHER
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label> Address </label>
+            </div>
+            <div class="col-md-5">
+              <textarea rows="2" class="form-control" formControlName="addresses" required></textarea>
+            </div>
+            <div class="col-md-4">
+              <!-- <input type="text" class="form-control" placeholder="Last Name"> -->
+              <sub style="color: red">Example: H.no.1337/a, Greymont Ave street,
+                <br> Richard colony, Rajasthan,
+                <br>PIN:39202",</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Patient Status: </label>
+            </div>
+            <div class="col-md-4">
+              <select class="form-control" formControlName="status" required>
+                <option *ngFor="let status of statusOfPatient">{{status}}</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <sub style="color: red">*Should be filled by Admin*</sub>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Patient image: </label>
+            </div>
+            <div class="col-md-4">
+              <input type="file" (change)="onImageAdded($event)" required>
+            </div>
+            <div class="col-md-4">
+              <sub style="color: red">*Should be filled by Admin*</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row" >
+              <!-- formGroupName="phones" -->
+            <div class="col-md-2">
+              <label>Emergency Contacts: </label>
+            </div>
+            <div class="col-md-10">
+              <div class="row">
+                <div class="col-md-3">
+                  <label> Mother Detail: </label>
+                </div>
+                <div class="col-md-4">
+                  <input class="form-control" placeholder="Mother's Name" formControlName="patient_mother" required>
+                  <input class="form-control" placeholder="Mother's contact no." formControlName="mother_number" required>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label> Father Detail: </label>
+                </div>
+                <div class="col-md-4">
+                  <input class="form-control" placeholder="Father's Name" formControlName="patient_father" required>
+                  <input class="form-control" placeholder="Father's contact no." formControlName="father_number" required>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-3">
+                  <label> Doctor Detail: </label>
+                </div>
+                <div class="col-md-4">
+                  <input class="form-control" placeholder="Doctor's Name" formControlName="patient_doctorName" required>
+                  <input class="form-control" placeholder="Doctor's contact no." formControlName="patient_doctorNumber" required>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-2">
+              <label>Email: </label>
+            </div>
+            <div class="col-md-4">
+              <input class="form-control" placeholder="email@domain.com" formControlName="email" required>
+            </div>
+            <div class="col-md-4">
+              <sub style="color: red">*Should be filled by Admin*</sub>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row justify-content-center">
+        <div class="col-2"> <!--[disabled]="myForm.invalid"-->
+          <button type="submit" data-toggle="modal" data-target="#myModal" [disabled]="myForm.invalid" class="btn btn-success" >Submit Form </button>
+        </div>
+        <div class="col-4">
+          <a class="btn btn-warning" (click)="resetForm()">Clear Form </a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br>
+  <br>
+</div>

@@ -1,0 +1,11 @@
+.main-registration{
+    margin-left: 258px;
+    padding-top: 80px;
+}
+label:after{
+    content:"*";
+    color:red;
+  }
+#regForm{
+    background-color: whitesmoke;
+}

@@ -1,0 +1,148 @@
+
+
+.mybtn{
+    width: 185px;
+    height: 40px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: #9c27b0;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+
+}
+button:active{
+    background:lightgrey;
+}
+
+.sidebar {
+    height: 100%;
+    width: 205px;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid gray;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #4d4949;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: red;
+}
+.sidebar a.active {
+    background-color: #4d4949;
+    color: white;
+}
+
+/* .sidebar .closebtn {
+    background-color: white;
+    color: red;
+    position: absolute;
+    right: 25px;
+    font-size: 20px;
+    margin-left: 250px;
+} */
+
+.closebtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    color: red;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 79%;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 79%;
+}
+
+.openbtn:hover {
+    background-color: white;
+    color: transparent;
+}
+
+#main {
+    transition: margin-left .5s;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 90px;
+    background-image: url('../../assets/download.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+.main-header{
+    margin-left: 255px;
+    color: black;
+}
+.headers{
+    margin-left:25px;
+    color: black;
+    display: inline;
+}
+
+.nav-tabs>li>a {
+    background-color: #333333; 
+    border-color: #777777;
+    color:#fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+  
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color:black;
+    background-color: #666;
+    border: 1px solid #888888;
+}
+  
+
+.nav-tabs>li>a:hover {
+    border-color: #000000;
+    background-color: #111111;
+}
+
+.nav-item{
+    margin-left: 10px;
+}
+
+.face-margin {
+    margin-left: 50px;
+}
+
+/* .brand-border {
+    border-bottom: 12px solid gray;
+} */
+

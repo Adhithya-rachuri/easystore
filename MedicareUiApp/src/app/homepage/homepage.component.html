@@ -1,0 +1,127 @@
+<div class="container-fluid" id="main-login">
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-1 align-self-start" id="animated bounce">
+            <img class = "imgBounce" src ="../../assets/medicalLogo.png" alt="Meical Logo" width="100%" height="100%">
+        </div>
+        <div class="col-md-3 align-self-start">
+          <br>
+          <h2>Digi Care services </h2>
+        </div>
+        <div class=" offset-4 col-md-4 ">
+          <span class="fa fa-phone"></span><b>Call-</b> 2644789562 <span class="fa fa-phone"></span><b>Fax-</b> 5456135485 <span class="fa fa-email"></span><b>Email-</b> digicare@services.com
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- <marquee> Welcome to the Digi care services. We are here to assist and help you reach your health percentage to 100..</marquee> -->
+  <marquee  behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();" > 
+		<span style="color: orange"><b>Warning:</b></span>
+		<i> Welcome to the Digi care services. We are here to assist and help you reach your health percentage to 100..
+		</i>
+	</marquee>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="navBgColor">
+      <a class="navbar-brand pb-2" [routerLink]="['/homepage']"><span class="fa fa-plus">Digi Care</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+              <li class="nav-item active">
+                  <a class="nav-link" [routerLink]="['/homepage']">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/homepage']"> Doctors</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" [routerLink]="['/homepage']"> Services</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" [routerLink]="['/homepage']" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> About Us </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" [routerLink]="['/homepage']">Gallery</a></li>
+                      <li><a class="dropdown-item" [routerLink]="['/homepage']"></a></li>
+                  </ul>
+                </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" [routerLink]="['/homepage']" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Login </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" [routerLink]="['/auth']">User</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/auth']">Admin</a></li>
+                    </ul>
+                </li>
+              
+          </ul>
+      </div>
+  </nav>
+  <br>
+  <div class="row" id="moveRight">
+     
+      <div class="col-md-12">
+          <div class="row">
+              <div class="col-md-6">
+                <div class="card" style="width:500px">
+                    <img class="card-img-top" src="../../assets/patients.jpg" alt="Card image">
+                    <div class="card-img-overlay">
+                      <h4 class="card-title"><b>OuR GoAl</b></h4>
+                      <p class="card-text">Hospitals are great places, and you can learn from them, 
+                          but you don't necessarily need to go in anytime you get the sniffles. 
+                          And maybe you shouldn't treat pregnancy as a disease</p>
+                      <a href="#" class="btn btn-primary">Checkout..</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-6">
+                    <div class="card" style="width:500px">
+                            <img class="card-img-top" src="../../assets/doctors.jpg" alt="Card image">
+                            <div class="card-img-overlay">
+                              <h4 class="card-title"><b>OuR fUtUrE</b></h4>
+                              <p class="card-text"> Great hospitals do two things. They look after patients, and they teach young doctors.
+                                   We look after clients, and we teach young advertising people.</p>
+                              <a href="#" class="btn btn-primary">Checkout..</a>
+                            </div>
+                          </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br>
+  <div class="row" id="moveRight">  
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                  <div class="card" style="width:500px">
+                      <img class="card-img-top" src="../../assets/patients.jpg" alt="Card image">
+                      <div class="card-img-overlay">
+                        <h4 class="card-title"><b>OuR GoAl</b></h4>
+                        <p class="card-text">Hospitals are great places, and you can learn from them, 
+                            but you don't necessarily need to go in anytime you get the sniffles. 
+                            And maybe you shouldn't treat pregnancy as a disease</p>
+                        <a href="#" class="btn btn-primary">Checkout..</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                      <div class="card" style="width:500px">
+                              <img class="card-img-top" src="../../assets/doctors.jpg" alt="Card image">
+                              <div class="card-img-overlay">
+                                <h4 class="card-title"><b>OuR fUtUrE</b></h4>
+                                <p class="card-text">Great hospitals do two things. They look after patients, and they teach young doctors.
+                                     We look after clients, and we teach young advertising people.</p>
+                                <a href="#" class="btn btn-primary">Checkout..</a>
+                              </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+<div class="footer">
+    <p>© 2019 Digi Care Services. All Rights Reserved</p>
+</div>
+
